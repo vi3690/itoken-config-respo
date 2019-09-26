@@ -1,0 +1,17 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: itoken-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
+  instance:
+    instance-id: zuul-9091
+    ip-address: true
+zuul:
+  routes:
+    test1:
+      path: /test1/**
+      serviceId: itoken-test
